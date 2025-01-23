@@ -1,0 +1,359 @@
+# Summary
+
+Date : 2025-02-07 18:58:45
+
+Directory /Users/gavinatkinson/Documents/Code/FTC-2024-2025
+
+Total : 1042 files,  207048 codes, 24374 comments, 18648 blanks, all 250070 lines
+
+Summary / [Details](details.md) / [Diff Summary](diff.md) / [Diff Details](diff-details.md)
+
+## Languages
+| language | files | code | comment | blank | total |
+| :--- | ---: | ---: | ---: | ---: | ---: |
+| JavaScript | 196 | 149,285 | 18,488 | 13,445 | 181,218 |
+| XML | 217 | 20,101 | 755 | 2,307 | 23,163 |
+| Java | 434 | 16,481 | 4,693 | 2,101 | 23,275 |
+| JSON | 126 | 8,524 | 0 | 1 | 8,525 |
+| CSS | 17 | 8,182 | 223 | 165 | 8,570 |
+| HTML | 16 | 3,159 | 44 | 292 | 3,495 |
+| Less | 9 | 766 | 83 | 153 | 1,002 |
+| Markdown | 7 | 241 | 0 | 96 | 337 |
+| Gradle | 6 | 144 | 56 | 40 | 240 |
+| XSL | 1 | 85 | 0 | 9 | 94 |
+| Batch | 1 | 50 | 16 | 25 | 91 |
+| Java Properties | 12 | 30 | 16 | 14 | 60 |
+
+## Directories
+| path | files | code | comment | blank | total |
+| :--- | ---: | ---: | ---: | ---: | ---: |
+| . | 1,042 | 207,048 | 24,374 | 18,648 | 250,070 |
+| . (Files) | 8 | 160 | 69 | 55 | 284 |
+| .gradle | 5 | 2 | 2 | 5 | 9 |
+| .gradle (Files) | 1 | 1 | 1 | 1 | 3 |
+| .gradle/8.9 | 2 | 0 | 0 | 2 | 2 |
+| .gradle/8.9 (Files) | 1 | 0 | 0 | 1 | 1 |
+| .gradle/8.9/dependencies-accessors | 1 | 0 | 0 | 1 | 1 |
+| .gradle/buildOutputCleanup | 1 | 1 | 1 | 1 | 3 |
+| .gradle/vcs-1 | 1 | 0 | 0 | 1 | 1 |
+| .idea | 7 | 94 | 0 | 0 | 94 |
+| FtcRobotController | 304 | 11,701 | 4,971 | 1,693 | 18,365 |
+| FtcRobotController (Files) | 1 | 19 | 4 | 8 | 31 |
+| FtcRobotController/build | 234 | 6,465 | 232 | 96 | 6,793 |
+| FtcRobotController/build/generated | 1 | 7 | 4 | 2 | 13 |
+| FtcRobotController/build/generated/source | 1 | 7 | 4 | 2 | 13 |
+| FtcRobotController/build/generated/source/buildConfig | 1 | 7 | 4 | 2 | 13 |
+| FtcRobotController/build/generated/source/buildConfig/debug | 1 | 7 | 4 | 2 | 13 |
+| FtcRobotController/build/generated/source/buildConfig/debug/com | 1 | 7 | 4 | 2 | 13 |
+| FtcRobotController/build/generated/source/buildConfig/debug/com/qualcomm | 1 | 7 | 4 | 2 | 13 |
+| FtcRobotController/build/generated/source/buildConfig/debug/com/qualcomm/ftcrobotcontroller | 1 | 7 | 4 | 2 | 13 |
+| FtcRobotController/build/intermediates | 233 | 6,458 | 228 | 94 | 6,780 |
+| FtcRobotController/build/intermediates/aapt_friendly_merged_manifests | 2 | 79 | 5 | 12 | 96 |
+| FtcRobotController/build/intermediates/aapt_friendly_merged_manifests/debug | 2 | 79 | 5 | 12 | 96 |
+| FtcRobotController/build/intermediates/aapt_friendly_merged_manifests/debug/processDebugManifest | 2 | 79 | 5 | 12 | 96 |
+| FtcRobotController/build/intermediates/aapt_friendly_merged_manifests/debug/processDebugManifest/aapt | 2 | 79 | 5 | 12 | 96 |
+| FtcRobotController/build/intermediates/aar_metadata | 1 | 6 | 0 | 1 | 7 |
+| FtcRobotController/build/intermediates/aar_metadata/debug | 1 | 6 | 0 | 1 | 7 |
+| FtcRobotController/build/intermediates/aar_metadata/debug/writeDebugAarMetadata | 1 | 6 | 0 | 1 | 7 |
+| FtcRobotController/build/intermediates/annotation_processor_list | 1 | 1 | 0 | 0 | 1 |
+| FtcRobotController/build/intermediates/annotation_processor_list/debug | 1 | 1 | 0 | 0 | 1 |
+| FtcRobotController/build/intermediates/annotation_processor_list/debug/javaPreCompileDebug | 1 | 1 | 0 | 0 | 1 |
+| FtcRobotController/build/intermediates/incremental | 6 | 68 | 1 | 1 | 70 |
+| FtcRobotController/build/intermediates/incremental/debug | 3 | 62 | 1 | 1 | 64 |
+| FtcRobotController/build/intermediates/incremental/debug/packageDebugResources | 3 | 62 | 1 | 1 | 64 |
+| FtcRobotController/build/intermediates/incremental/debug/packageDebugResources (Files) | 2 | 23 | 1 | 1 | 25 |
+| FtcRobotController/build/intermediates/incremental/debug/packageDebugResources/merged.dir | 1 | 39 | 0 | 0 | 39 |
+| FtcRobotController/build/intermediates/incremental/debug/packageDebugResources/merged.dir/values | 1 | 39 | 0 | 0 | 39 |
+| FtcRobotController/build/intermediates/incremental/mergeDebugJniLibFolders | 1 | 2 | 0 | 0 | 2 |
+| FtcRobotController/build/intermediates/incremental/mergeDebugShaders | 1 | 2 | 0 | 0 | 2 |
+| FtcRobotController/build/intermediates/incremental/packageDebugAssets | 1 | 2 | 0 | 0 | 2 |
+| FtcRobotController/build/intermediates/javac | 108 | 2,996 | 34 | 11 | 3,041 |
+| FtcRobotController/build/intermediates/javac/debug | 108 | 2,996 | 34 | 11 | 3,041 |
+| FtcRobotController/build/intermediates/javac/debug/compileDebugJavaWithJavac | 108 | 2,996 | 34 | 11 | 3,041 |
+| FtcRobotController/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes | 108 | 2,996 | 34 | 11 | 3,041 |
+| FtcRobotController/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/com | 1 | 8 | 0 | 0 | 8 |
+| FtcRobotController/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/com/qualcomm | 1 | 8 | 0 | 0 | 8 |
+| FtcRobotController/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/com/qualcomm/ftcrobotcontroller | 1 | 8 | 0 | 0 | 8 |
+| FtcRobotController/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/org | 107 | 2,988 | 34 | 11 | 3,033 |
+| FtcRobotController/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/org/firstinspires | 107 | 2,988 | 34 | 11 | 3,033 |
+| FtcRobotController/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/org/firstinspires/ftc | 107 | 2,988 | 34 | 11 | 3,033 |
+| FtcRobotController/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/org/firstinspires/ftc/robotcontroller | 107 | 2,988 | 34 | 11 | 3,033 |
+| FtcRobotController/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/org/firstinspires/ftc/robotcontroller/external | 92 | 2,374 | 34 | 10 | 2,418 |
+| FtcRobotController/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/org/firstinspires/ftc/robotcontroller/external/samples | 92 | 2,374 | 34 | 10 | 2,418 |
+| FtcRobotController/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/org/firstinspires/ftc/robotcontroller/internal | 15 | 614 | 0 | 1 | 615 |
+| FtcRobotController/build/intermediates/merged_manifest | 1 | 61 | 5 | 12 | 78 |
+| FtcRobotController/build/intermediates/merged_manifest/debug | 1 | 61 | 5 | 12 | 78 |
+| FtcRobotController/build/intermediates/merged_manifest/debug/processDebugManifest | 1 | 61 | 5 | 12 | 78 |
+| FtcRobotController/build/intermediates/navigation_json | 1 | 1 | 0 | 0 | 1 |
+| FtcRobotController/build/intermediates/navigation_json/debug | 1 | 1 | 0 | 0 | 1 |
+| FtcRobotController/build/intermediates/navigation_json/debug/extractDeepLinksDebug | 1 | 1 | 0 | 0 | 1 |
+| FtcRobotController/build/intermediates/packaged_res | 5 | 250 | 149 | 46 | 445 |
+| FtcRobotController/build/intermediates/packaged_res/debug | 5 | 250 | 149 | 46 | 445 |
+| FtcRobotController/build/intermediates/packaged_res/debug/packageDebugResources | 5 | 250 | 149 | 46 | 445 |
+| FtcRobotController/build/intermediates/packaged_res/debug/packageDebugResources/layout | 1 | 123 | 39 | 22 | 184 |
+| FtcRobotController/build/intermediates/packaged_res/debug/packageDebugResources/menu | 1 | 38 | 32 | 9 | 79 |
+| FtcRobotController/build/intermediates/packaged_res/debug/packageDebugResources/values | 1 | 39 | 0 | 0 | 39 |
+| FtcRobotController/build/intermediates/packaged_res/debug/packageDebugResources/xml | 2 | 50 | 78 | 15 | 143 |
+| FtcRobotController/build/intermediates/runtime_library_classes_dir | 108 | 2,996 | 34 | 11 | 3,041 |
+| FtcRobotController/build/intermediates/runtime_library_classes_dir/debug | 108 | 2,996 | 34 | 11 | 3,041 |
+| FtcRobotController/build/intermediates/runtime_library_classes_dir/debug/bundleLibRuntimeToDirDebug | 108 | 2,996 | 34 | 11 | 3,041 |
+| FtcRobotController/build/intermediates/runtime_library_classes_dir/debug/bundleLibRuntimeToDirDebug/com | 1 | 8 | 0 | 0 | 8 |
+| FtcRobotController/build/intermediates/runtime_library_classes_dir/debug/bundleLibRuntimeToDirDebug/com/qualcomm | 1 | 8 | 0 | 0 | 8 |
+| FtcRobotController/build/intermediates/runtime_library_classes_dir/debug/bundleLibRuntimeToDirDebug/com/qualcomm/ftcrobotcontroller | 1 | 8 | 0 | 0 | 8 |
+| FtcRobotController/build/intermediates/runtime_library_classes_dir/debug/bundleLibRuntimeToDirDebug/org | 107 | 2,988 | 34 | 11 | 3,033 |
+| FtcRobotController/build/intermediates/runtime_library_classes_dir/debug/bundleLibRuntimeToDirDebug/org/firstinspires | 107 | 2,988 | 34 | 11 | 3,033 |
+| FtcRobotController/build/intermediates/runtime_library_classes_dir/debug/bundleLibRuntimeToDirDebug/org/firstinspires/ftc | 107 | 2,988 | 34 | 11 | 3,033 |
+| FtcRobotController/build/intermediates/runtime_library_classes_dir/debug/bundleLibRuntimeToDirDebug/org/firstinspires/ftc/robotcontroller | 107 | 2,988 | 34 | 11 | 3,033 |
+| FtcRobotController/build/intermediates/runtime_library_classes_dir/debug/bundleLibRuntimeToDirDebug/org/firstinspires/ftc/robotcontroller/external | 92 | 2,374 | 34 | 10 | 2,418 |
+| FtcRobotController/build/intermediates/runtime_library_classes_dir/debug/bundleLibRuntimeToDirDebug/org/firstinspires/ftc/robotcontroller/external/samples | 92 | 2,374 | 34 | 10 | 2,418 |
+| FtcRobotController/build/intermediates/runtime_library_classes_dir/debug/bundleLibRuntimeToDirDebug/org/firstinspires/ftc/robotcontroller/internal | 15 | 614 | 0 | 1 | 615 |
+| FtcRobotController/src | 69 | 5,217 | 4,735 | 1,589 | 11,541 |
+| FtcRobotController/src/main | 69 | 5,217 | 4,735 | 1,589 | 11,541 |
+| FtcRobotController/src/main (Files) | 1 | 58 | 5 | 17 | 80 |
+| FtcRobotController/src/main/java | 61 | 4,904 | 4,509 | 1,506 | 10,919 |
+| FtcRobotController/src/main/java/org | 61 | 4,904 | 4,509 | 1,506 | 10,919 |
+| FtcRobotController/src/main/java/org/firstinspires | 61 | 4,904 | 4,509 | 1,506 | 10,919 |
+| FtcRobotController/src/main/java/org/firstinspires/ftc | 61 | 4,904 | 4,509 | 1,506 | 10,919 |
+| FtcRobotController/src/main/java/org/firstinspires/ftc/robotcontroller | 61 | 4,904 | 4,509 | 1,506 | 10,919 |
+| FtcRobotController/src/main/java/org/firstinspires/ftc/robotcontroller/external | 58 | 4,206 | 4,341 | 1,365 | 9,912 |
+| FtcRobotController/src/main/java/org/firstinspires/ftc/robotcontroller/external/samples | 58 | 4,206 | 4,341 | 1,365 | 9,912 |
+| FtcRobotController/src/main/java/org/firstinspires/ftc/robotcontroller/internal | 3 | 698 | 168 | 141 | 1,007 |
+| FtcRobotController/src/main/res | 7 | 255 | 221 | 66 | 542 |
+| FtcRobotController/src/main/res/layout | 1 | 123 | 39 | 22 | 184 |
+| FtcRobotController/src/main/res/menu | 1 | 38 | 32 | 9 | 79 |
+| FtcRobotController/src/main/res/values | 3 | 44 | 72 | 20 | 136 |
+| FtcRobotController/src/main/res/xml | 2 | 50 | 78 | 15 | 143 |
+| TeamCode | 717 | 195,086 | 19,332 | 16,894 | 231,312 |
+| TeamCode (Files) | 1 | 23 | 11 | 9 | 43 |
+| TeamCode/build | 688 | 191,743 | 19,064 | 16,252 | 227,059 |
+| TeamCode/build/intermediates | 687 | 191,722 | 19,064 | 16,252 | 227,038 |
+| TeamCode/build/intermediates/annotation_processor_list | 1 | 1 | 0 | 0 | 1 |
+| TeamCode/build/intermediates/annotation_processor_list/debug | 1 | 1 | 0 | 0 | 1 |
+| TeamCode/build/intermediates/annotation_processor_list/debug/javaPreCompileDebug | 1 | 1 | 0 | 0 | 1 |
+| TeamCode/build/intermediates/apk | 1 | 21 | 0 | 0 | 21 |
+| TeamCode/build/intermediates/apk/debug | 1 | 21 | 0 | 0 | 21 |
+| TeamCode/build/intermediates/app_metadata | 1 | 2 | 0 | 1 | 3 |
+| TeamCode/build/intermediates/app_metadata/debug | 1 | 2 | 0 | 1 | 3 |
+| TeamCode/build/intermediates/app_metadata/debug/writeDebugAppMetadata | 1 | 2 | 0 | 1 | 3 |
+| TeamCode/build/intermediates/assets | 312 | 170,205 | 18,848 | 14,160 | 203,213 |
+| TeamCode/build/intermediates/assets/debug | 312 | 170,205 | 18,848 | 14,160 | 203,213 |
+| TeamCode/build/intermediates/assets/debug/mergeDebugAssets | 312 | 170,205 | 18,848 | 14,160 | 203,213 |
+| TeamCode/build/intermediates/assets/debug/mergeDebugAssets (Files) | 14 | 3,001 | 30 | 239 | 3,270 |
+| TeamCode/build/intermediates/assets/debug/mergeDebugAssets/blockly | 5 | 2,590 | 706 | 93 | 3,389 |
+| TeamCode/build/intermediates/assets/debug/mergeDebugAssets/blockly (Files) | 3 | 2,092 | 3 | 5 | 2,100 |
+| TeamCode/build/intermediates/assets/debug/mergeDebugAssets/blockly/media | 1 | 68 | 0 | 7 | 75 |
+| TeamCode/build/intermediates/assets/debug/mergeDebugAssets/blockly/msg | 1 | 430 | 703 | 81 | 1,214 |
+| TeamCode/build/intermediates/assets/debug/mergeDebugAssets/blocks | 108 | 45,221 | 3,757 | 4,062 | 53,040 |
+| TeamCode/build/intermediates/assets/debug/mergeDebugAssets/blocks (Files) | 87 | 38,188 | 3,117 | 3,425 | 44,730 |
+| TeamCode/build/intermediates/assets/debug/mergeDebugAssets/blocks/obsolete | 20 | 7,026 | 640 | 633 | 8,299 |
+| TeamCode/build/intermediates/assets/debug/mergeDebugAssets/blocks/samples | 1 | 7 | 0 | 4 | 11 |
+| TeamCode/build/intermediates/assets/debug/mergeDebugAssets/css | 17 | 8,031 | 113 | 141 | 8,285 |
+| TeamCode/build/intermediates/assets/debug/mergeDebugAssets/css (Files) | 16 | 8,030 | 81 | 140 | 8,251 |
+| TeamCode/build/intermediates/assets/debug/mergeDebugAssets/css/java | 1 | 1 | 32 | 1 | 34 |
+| TeamCode/build/intermediates/assets/debug/mergeDebugAssets/dash | 37 | 1,417 | 68 | 10 | 1,495 |
+| TeamCode/build/intermediates/assets/debug/mergeDebugAssets/dash (Files) | 1 | 15 | 0 | 2 | 17 |
+| TeamCode/build/intermediates/assets/debug/mergeDebugAssets/dash/assets | 36 | 1,402 | 68 | 8 | 1,478 |
+| TeamCode/build/intermediates/assets/debug/mergeDebugAssets/fonts | 2 | 2,959 | 0 | 1 | 2,960 |
+| TeamCode/build/intermediates/assets/debug/mergeDebugAssets/ftcblockly | 9 | 2,105 | 505 | 212 | 2,822 |
+| TeamCode/build/intermediates/assets/debug/mergeDebugAssets/ftcblockly/generators | 9 | 2,105 | 505 | 212 | 2,822 |
+| TeamCode/build/intermediates/assets/debug/mergeDebugAssets/ftcblockly/generators (Files) | 2 | 997 | 223 | 108 | 1,328 |
+| TeamCode/build/intermediates/assets/debug/mergeDebugAssets/ftcblockly/generators/ftcjava | 7 | 1,108 | 282 | 104 | 1,494 |
+| TeamCode/build/intermediates/assets/debug/mergeDebugAssets/java | 69 | 91,521 | 11,800 | 7,521 | 110,842 |
+| TeamCode/build/intermediates/assets/debug/mergeDebugAssets/java (Files) | 2 | 641 | 14 | 50 | 705 |
+| TeamCode/build/intermediates/assets/debug/mergeDebugAssets/java/css | 6 | 813 | 193 | 141 | 1,147 |
+| TeamCode/build/intermediates/assets/debug/mergeDebugAssets/java/js | 61 | 90,067 | 11,593 | 7,330 | 108,990 |
+| TeamCode/build/intermediates/assets/debug/mergeDebugAssets/java/js (Files) | 1 | 295 | 44 | 39 | 378 |
+| TeamCode/build/intermediates/assets/debug/mergeDebugAssets/java/js/antlr4 | 50 | 14,950 | 7,008 | 2,357 | 24,315 |
+| TeamCode/build/intermediates/assets/debug/mergeDebugAssets/java/js/antlr4 (Files) | 20 | 10,333 | 4,459 | 1,624 | 16,416 |
+| TeamCode/build/intermediates/assets/debug/mergeDebugAssets/java/js/antlr4/atn | 16 | 3,504 | 1,830 | 531 | 5,865 |
+| TeamCode/build/intermediates/assets/debug/mergeDebugAssets/java/js/antlr4/dfa | 4 | 228 | 127 | 42 | 397 |
+| TeamCode/build/intermediates/assets/debug/mergeDebugAssets/java/js/antlr4/error | 5 | 500 | 545 | 94 | 1,139 |
+| TeamCode/build/intermediates/assets/debug/mergeDebugAssets/java/js/antlr4/polyfills | 2 | 107 | 9 | 2 | 118 |
+| TeamCode/build/intermediates/assets/debug/mergeDebugAssets/java/js/antlr4/tree | 3 | 278 | 38 | 64 | 380 |
+| TeamCode/build/intermediates/assets/debug/mergeDebugAssets/java/js/java | 5 | 29,309 | 3,954 | 4,509 | 37,772 |
+| TeamCode/build/intermediates/assets/debug/mergeDebugAssets/java/js/snippets | 3 | 382 | 94 | 11 | 487 |
+| TeamCode/build/intermediates/assets/debug/mergeDebugAssets/java/js/worker | 2 | 45,131 | 493 | 414 | 46,038 |
+| TeamCode/build/intermediates/assets/debug/mergeDebugAssets/js | 12 | 7,069 | 1,204 | 1,163 | 9,436 |
+| TeamCode/build/intermediates/assets/debug/mergeDebugAssets/toolbox | 29 | 3,832 | 7 | 31 | 3,870 |
+| TeamCode/build/intermediates/assets/debug/mergeDebugAssets/web | 10 | 2,459 | 658 | 687 | 3,804 |
+| TeamCode/build/intermediates/assets/debug/mergeDebugAssets/web/assets | 6 | 2,330 | 658 | 638 | 3,626 |
+| TeamCode/build/intermediates/assets/debug/mergeDebugAssets/web/tuning | 4 | 129 | 0 | 49 | 178 |
+| TeamCode/build/intermediates/compatible_screen_manifest | 1 | 10 | 0 | 0 | 10 |
+| TeamCode/build/intermediates/compatible_screen_manifest/debug | 1 | 10 | 0 | 0 | 10 |
+| TeamCode/build/intermediates/compatible_screen_manifest/debug/createDebugCompatibleScreenManifests | 1 | 10 | 0 | 0 | 10 |
+| TeamCode/build/intermediates/incremental | 116 | 9,673 | 124 | 2,045 | 11,842 |
+| TeamCode/build/intermediates/incremental/debug | 113 | 9,667 | 124 | 2,045 | 11,836 |
+| TeamCode/build/intermediates/incremental/debug/mergeDebugResources | 113 | 9,667 | 124 | 2,045 | 11,836 |
+| TeamCode/build/intermediates/incremental/debug/mergeDebugResources (Files) | 2 | 2,811 | 1 | 1,334 | 4,146 |
+| TeamCode/build/intermediates/incremental/debug/mergeDebugResources/merged.dir | 111 | 6,856 | 123 | 711 | 7,690 |
+| TeamCode/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values | 1 | 3,473 | 123 | 666 | 4,262 |
+| TeamCode/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-af | 1 | 32 | 0 | 0 | 32 |
+| TeamCode/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-am | 1 | 32 | 0 | 0 | 32 |
+| TeamCode/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-ar | 1 | 36 | 0 | 0 | 36 |
+| TeamCode/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-as | 1 | 32 | 0 | 0 | 32 |
+| TeamCode/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-az | 1 | 32 | 0 | 0 | 32 |
+| TeamCode/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-b+sr+Latn | 1 | 32 | 0 | 0 | 32 |
+| TeamCode/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-be | 1 | 32 | 0 | 0 | 32 |
+| TeamCode/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-bg | 1 | 36 | 0 | 0 | 36 |
+| TeamCode/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-bn | 1 | 32 | 0 | 0 | 32 |
+| TeamCode/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-bs | 1 | 32 | 0 | 0 | 32 |
+| TeamCode/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-ca | 1 | 36 | 0 | 0 | 36 |
+| TeamCode/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-cs | 1 | 36 | 0 | 0 | 36 |
+| TeamCode/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-da | 1 | 36 | 0 | 0 | 36 |
+| TeamCode/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-de | 1 | 36 | 0 | 0 | 36 |
+| TeamCode/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-el | 1 | 36 | 0 | 0 | 36 |
+| TeamCode/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-en-rAU | 1 | 32 | 0 | 0 | 32 |
+| TeamCode/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-en-rCA | 1 | 32 | 0 | 0 | 32 |
+| TeamCode/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-en-rGB | 1 | 32 | 0 | 0 | 32 |
+| TeamCode/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-en-rIN | 1 | 32 | 0 | 0 | 32 |
+| TeamCode/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-en-rXC | 1 | 32 | 0 | 0 | 32 |
+| TeamCode/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-es | 1 | 36 | 0 | 0 | 36 |
+| TeamCode/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-es-rUS | 1 | 32 | 0 | 0 | 32 |
+| TeamCode/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-et | 1 | 32 | 0 | 0 | 32 |
+| TeamCode/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-eu | 1 | 36 | 0 | 0 | 36 |
+| TeamCode/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-fa | 1 | 32 | 0 | 0 | 32 |
+| TeamCode/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-fi | 1 | 36 | 0 | 0 | 36 |
+| TeamCode/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-fr | 1 | 36 | 0 | 0 | 36 |
+| TeamCode/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-fr-rCA | 1 | 32 | 0 | 0 | 32 |
+| TeamCode/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-gl | 1 | 32 | 0 | 0 | 32 |
+| TeamCode/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-gu | 1 | 32 | 0 | 0 | 32 |
+| TeamCode/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-h720dp-v13 | 1 | 4 | 0 | 0 | 4 |
+| TeamCode/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-hdpi-v4 | 1 | 8 | 0 | 0 | 8 |
+| TeamCode/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-he | 1 | 7 | 0 | 0 | 7 |
+| TeamCode/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-hi | 1 | 36 | 0 | 0 | 36 |
+| TeamCode/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-hr | 1 | 32 | 0 | 0 | 32 |
+| TeamCode/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-hu | 1 | 36 | 0 | 0 | 36 |
+| TeamCode/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-hy | 1 | 32 | 0 | 0 | 32 |
+| TeamCode/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-id | 1 | 7 | 0 | 0 | 7 |
+| TeamCode/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-in | 1 | 32 | 0 | 0 | 32 |
+| TeamCode/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-is | 1 | 32 | 0 | 0 | 32 |
+| TeamCode/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-it | 1 | 36 | 0 | 0 | 36 |
+| TeamCode/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-iw | 1 | 36 | 0 | 0 | 36 |
+| TeamCode/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-ja | 1 | 36 | 0 | 0 | 36 |
+| TeamCode/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-ka | 1 | 32 | 0 | 0 | 32 |
+| TeamCode/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-kk | 1 | 32 | 0 | 0 | 32 |
+| TeamCode/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-km | 1 | 32 | 0 | 0 | 32 |
+| TeamCode/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-kn | 1 | 32 | 0 | 0 | 32 |
+| TeamCode/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-ko | 1 | 36 | 0 | 0 | 36 |
+| TeamCode/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-ky | 1 | 32 | 0 | 0 | 32 |
+| TeamCode/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-land | 1 | 6 | 0 | 0 | 6 |
+| TeamCode/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-large-v4 | 1 | 12 | 0 | 0 | 12 |
+| TeamCode/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-ldltr-v21 | 1 | 4 | 0 | 0 | 4 |
+| TeamCode/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-lo | 1 | 32 | 0 | 0 | 32 |
+| TeamCode/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-lt | 1 | 32 | 0 | 0 | 32 |
+| TeamCode/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-lv | 1 | 32 | 0 | 0 | 32 |
+| TeamCode/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-mk | 1 | 32 | 0 | 0 | 32 |
+| TeamCode/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-ml | 1 | 32 | 0 | 0 | 32 |
+| TeamCode/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-mn | 1 | 32 | 0 | 0 | 32 |
+| TeamCode/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-mr | 1 | 32 | 0 | 0 | 32 |
+| TeamCode/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-ms | 1 | 32 | 0 | 0 | 32 |
+| TeamCode/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-my | 1 | 32 | 0 | 0 | 32 |
+| TeamCode/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-nb | 1 | 32 | 0 | 0 | 32 |
+| TeamCode/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-ne | 1 | 32 | 0 | 0 | 32 |
+| TeamCode/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-night-v8 | 1 | 11 | 0 | 0 | 11 |
+| TeamCode/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-nl | 1 | 36 | 0 | 0 | 36 |
+| TeamCode/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-or | 1 | 32 | 0 | 0 | 32 |
+| TeamCode/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-pa | 1 | 32 | 0 | 0 | 32 |
+| TeamCode/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-pl | 1 | 36 | 0 | 0 | 36 |
+| TeamCode/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-port | 1 | 4 | 0 | 0 | 4 |
+| TeamCode/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-pt | 1 | 36 | 0 | 0 | 36 |
+| TeamCode/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-pt-rBR | 1 | 32 | 0 | 0 | 32 |
+| TeamCode/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-pt-rPT | 1 | 32 | 0 | 0 | 32 |
+| TeamCode/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-ro | 1 | 36 | 0 | 0 | 36 |
+| TeamCode/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-ru | 1 | 36 | 0 | 0 | 36 |
+| TeamCode/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-si | 1 | 32 | 0 | 0 | 32 |
+| TeamCode/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-sk | 1 | 36 | 0 | 0 | 36 |
+| TeamCode/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-sl | 1 | 36 | 0 | 0 | 36 |
+| TeamCode/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-sq | 1 | 32 | 0 | 0 | 32 |
+| TeamCode/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-sr | 1 | 32 | 0 | 0 | 32 |
+| TeamCode/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-sv | 1 | 36 | 0 | 0 | 36 |
+| TeamCode/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-sw | 1 | 32 | 0 | 0 | 32 |
+| TeamCode/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-sw600dp-v13 | 1 | 11 | 0 | 0 | 11 |
+| TeamCode/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-ta | 1 | 32 | 0 | 0 | 32 |
+| TeamCode/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-te | 1 | 32 | 0 | 0 | 32 |
+| TeamCode/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-th | 1 | 36 | 0 | 0 | 36 |
+| TeamCode/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-tl | 1 | 32 | 0 | 0 | 32 |
+| TeamCode/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-tr | 1 | 36 | 0 | 0 | 36 |
+| TeamCode/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-uk | 1 | 36 | 0 | 0 | 36 |
+| TeamCode/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-ur | 1 | 32 | 0 | 0 | 32 |
+| TeamCode/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-uz | 1 | 32 | 0 | 0 | 32 |
+| TeamCode/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-v11 | 1 | 5 | 0 | 1 | 6 |
+| TeamCode/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-v14 | 1 | 5 | 0 | 1 | 6 |
+| TeamCode/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-v16 | 1 | 8 | 0 | 0 | 8 |
+| TeamCode/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-v17 | 1 | 62 | 0 | 0 | 62 |
+| TeamCode/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-v18 | 1 | 4 | 0 | 0 | 4 |
+| TeamCode/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-v21 | 1 | 250 | 0 | 27 | 277 |
+| TeamCode/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-v22 | 1 | 13 | 0 | 2 | 15 |
+| TeamCode/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-v23 | 1 | 41 | 0 | 10 | 51 |
+| TeamCode/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-v24 | 1 | 5 | 0 | 0 | 5 |
+| TeamCode/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-v25 | 1 | 9 | 0 | 0 | 9 |
+| TeamCode/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-v26 | 1 | 16 | 0 | 2 | 18 |
+| TeamCode/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-v28 | 1 | 11 | 0 | 2 | 13 |
+| TeamCode/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-vi | 1 | 32 | 0 | 0 | 32 |
+| TeamCode/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-watch-v20 | 1 | 12 | 0 | 0 | 12 |
+| TeamCode/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-watch-v21 | 1 | 15 | 0 | 0 | 15 |
+| TeamCode/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-xlarge-v4 | 1 | 9 | 0 | 0 | 9 |
+| TeamCode/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-zh-rCN | 1 | 36 | 0 | 0 | 36 |
+| TeamCode/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-zh-rHK | 1 | 36 | 0 | 0 | 36 |
+| TeamCode/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-zh-rTW | 1 | 36 | 0 | 0 | 36 |
+| TeamCode/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-zu | 1 | 32 | 0 | 0 | 32 |
+| TeamCode/build/intermediates/incremental/mergeDebugAssets | 1 | 2 | 0 | 0 | 2 |
+| TeamCode/build/intermediates/incremental/mergeDebugJniLibFolders | 1 | 2 | 0 | 0 | 2 |
+| TeamCode/build/intermediates/incremental/mergeDebugShaders | 1 | 2 | 0 | 0 | 2 |
+| TeamCode/build/intermediates/javac | 134 | 2,385 | 5 | 1 | 2,391 |
+| TeamCode/build/intermediates/javac/debug | 134 | 2,385 | 5 | 1 | 2,391 |
+| TeamCode/build/intermediates/javac/debug/compileDebugJavaWithJavac | 134 | 2,385 | 5 | 1 | 2,391 |
+| TeamCode/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes | 134 | 2,385 | 5 | 1 | 2,391 |
+| TeamCode/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/org | 134 | 2,385 | 5 | 1 | 2,391 |
+| TeamCode/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/org/firstinspires | 134 | 2,385 | 5 | 1 | 2,391 |
+| TeamCode/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/org/firstinspires/ftc | 134 | 2,385 | 5 | 1 | 2,391 |
+| TeamCode/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/org/firstinspires/ftc/teamcode | 134 | 2,385 | 5 | 1 | 2,391 |
+| TeamCode/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/org/firstinspires/ftc/teamcode (Files) | 122 | 2,179 | 5 | 1 | 2,185 |
+| TeamCode/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/org/firstinspires/ftc/teamcode/messages | 8 | 69 | 0 | 0 | 69 |
+| TeamCode/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/org/firstinspires/ftc/teamcode/tuning | 4 | 137 | 0 | 0 | 137 |
+| TeamCode/build/intermediates/linked_resources_binary_format | 1 | 20 | 0 | 0 | 20 |
+| TeamCode/build/intermediates/linked_resources_binary_format/debug | 1 | 20 | 0 | 0 | 20 |
+| TeamCode/build/intermediates/linked_resources_binary_format/debug/processDebugResources | 1 | 20 | 0 | 0 | 20 |
+| TeamCode/build/intermediates/merged_manifest | 1 | 331 | 29 | 15 | 375 |
+| TeamCode/build/intermediates/merged_manifest/debug | 1 | 331 | 29 | 15 | 375 |
+| TeamCode/build/intermediates/merged_manifest/debug/processDebugMainManifest | 1 | 331 | 29 | 15 | 375 |
+| TeamCode/build/intermediates/merged_manifests | 2 | 351 | 29 | 15 | 395 |
+| TeamCode/build/intermediates/merged_manifests/debug | 2 | 351 | 29 | 15 | 395 |
+| TeamCode/build/intermediates/merged_manifests/debug/processDebugManifest | 2 | 351 | 29 | 15 | 395 |
+| TeamCode/build/intermediates/merged_res_blame_folder | 113 | 8,370 | 0 | 0 | 8,370 |
+| TeamCode/build/intermediates/merged_res_blame_folder/debug | 113 | 8,370 | 0 | 0 | 8,370 |
+| TeamCode/build/intermediates/merged_res_blame_folder/debug/mergeDebugResources | 113 | 8,370 | 0 | 0 | 8,370 |
+| TeamCode/build/intermediates/merged_res_blame_folder/debug/mergeDebugResources/out | 113 | 8,370 | 0 | 0 | 8,370 |
+| TeamCode/build/intermediates/merged_res_blame_folder/debug/mergeDebugResources/out/multi-v2 | 112 | 8,360 | 0 | 0 | 8,360 |
+| TeamCode/build/intermediates/merged_res_blame_folder/debug/mergeDebugResources/out/single | 1 | 10 | 0 | 0 | 10 |
+| TeamCode/build/intermediates/navigation_json | 1 | 1 | 0 | 0 | 1 |
+| TeamCode/build/intermediates/navigation_json/debug | 1 | 1 | 0 | 0 | 1 |
+| TeamCode/build/intermediates/navigation_json/debug/extractDeepLinksDebug | 1 | 1 | 0 | 0 | 1 |
+| TeamCode/build/intermediates/packaged_manifests | 2 | 351 | 29 | 15 | 395 |
+| TeamCode/build/intermediates/packaged_manifests/debug | 2 | 351 | 29 | 15 | 395 |
+| TeamCode/build/intermediates/packaged_manifests/debug/processDebugManifestForPackage | 2 | 351 | 29 | 15 | 395 |
+| TeamCode/build/intermediates/signing_config_versions | 1 | 1 | 0 | 0 | 1 |
+| TeamCode/build/intermediates/signing_config_versions/debug | 1 | 1 | 0 | 0 | 1 |
+| TeamCode/build/intermediates/signing_config_versions/debug/writeDebugSigningConfigVersions | 1 | 1 | 0 | 0 | 1 |
+| TeamCode/build/outputs | 1 | 21 | 0 | 0 | 21 |
+| TeamCode/build/outputs/apk | 1 | 21 | 0 | 0 | 21 |
+| TeamCode/build/outputs/apk/debug | 1 | 21 | 0 | 0 | 21 |
+| TeamCode/src | 28 | 3,320 | 257 | 633 | 4,210 |
+| TeamCode/src/main | 28 | 3,320 | 257 | 633 | 4,210 |
+| TeamCode/src/main (Files) | 1 | 5 | 4 | 3 | 12 |
+| TeamCode/src/main/java | 24 | 3,308 | 107 | 615 | 4,030 |
+| TeamCode/src/main/java/org | 24 | 3,308 | 107 | 615 | 4,030 |
+| TeamCode/src/main/java/org/firstinspires | 24 | 3,308 | 107 | 615 | 4,030 |
+| TeamCode/src/main/java/org/firstinspires/ftc | 24 | 3,308 | 107 | 615 | 4,030 |
+| TeamCode/src/main/java/org/firstinspires/ftc/teamcode | 24 | 3,308 | 107 | 615 | 4,030 |
+| TeamCode/src/main/java/org/firstinspires/ftc/teamcode (Files) | 12 | 2,841 | 106 | 533 | 3,480 |
+| TeamCode/src/main/java/org/firstinspires/ftc/teamcode/messages | 8 | 149 | 0 | 33 | 182 |
+| TeamCode/src/main/java/org/firstinspires/ftc/teamcode/tuning | 4 | 318 | 1 | 49 | 368 |
+| TeamCode/src/main/res | 3 | 7 | 146 | 15 | 168 |
+| TeamCode/src/main/res/raw | 1 | 1 | 0 | 0 | 1 |
+| TeamCode/src/main/res/values | 1 | 3 | 0 | 2 | 5 |
+| TeamCode/src/main/res/xml | 1 | 3 | 146 | 13 | 162 |
+| gradle | 1 | 5 | 0 | 1 | 6 |
+| gradle/wrapper | 1 | 5 | 0 | 1 | 6 |
+
+Summary / [Details](details.md) / [Diff Summary](diff.md) / [Diff Details](diff-details.md)

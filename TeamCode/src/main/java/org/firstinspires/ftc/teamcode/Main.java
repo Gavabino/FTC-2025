@@ -182,8 +182,9 @@ public class Main extends LinearOpMode {
                 } else if (gamepad1.left_trigger > 0.5) {
                     climb1.setPower(1);
                     climb2.setPower(-1);
-                } else {
+                } if (gamepad1.y) {
                     climb1.setPower(0);
+                    climb2.setPower(0);
                 }
 
                 //Gamepad 2
@@ -197,11 +198,15 @@ public class Main extends LinearOpMode {
                 } 
 
                 if (gamepad2.left_bumper) {
-                    clawArm.setPosition(0.15);
+                    clawArm.setPosition(0.09);
                 }
 
                 if (gamepad2.right_bumper) {
-                    clawArm.setPosition(0.65);
+                    clawArm.setPosition(0.14);
+                }
+
+                if (gamepad2.right_trigger > 0.5) {
+                    clawArm.setPosition(0.16);
                 }
 
                 if (gamepad2.dpad_up) {

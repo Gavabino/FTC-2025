@@ -1,5 +1,7 @@
 package org.firstinspires.ftc.teamcode;
+
 import androidx.annotation.NonNull;
+
 import com.acmerobotics.dashboard.config.Config;
 import com.acmerobotics.dashboard.telemetry.TelemetryPacket;
 import com.acmerobotics.roadrunner.Action;
@@ -7,6 +9,7 @@ import com.acmerobotics.roadrunner.ParallelAction;
 import com.acmerobotics.roadrunner.Pose2d;
 import com.acmerobotics.roadrunner.SequentialAction;
 import com.acmerobotics.roadrunner.TrajectoryActionBuilder;
+import com.acmerobotics.roadrunner.TranslationalVelConstraint;
 import com.acmerobotics.roadrunner.Vector2d;
 import com.acmerobotics.roadrunner.ftc.Actions;
 import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
@@ -22,7 +25,6 @@ import com.qualcomm.robotcore.hardware.Servo;
 public class Right extends LinearOpMode {
     public class Lift {
         private final DcMotorEx lift;
-        private final Servo clawArm;
 
         public Lift(HardwareMap hardwareMap) {
             lift = hardwareMap.get(DcMotorEx.class, "slide");
@@ -30,7 +32,6 @@ public class Right extends LinearOpMode {
             lift.setDirection(DcMotorSimple.Direction.FORWARD);
             lift.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
             lift.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
-            clawArm = hardwareMap.get(Servo.class, "clawArm");
         }
 
         public class LiftUp implements Action {
@@ -53,6 +54,7 @@ public class Right extends LinearOpMode {
                 }
             }
         }
+
         public Action liftUp() {
             return new LiftUp();
         }
@@ -69,7 +71,7 @@ public class Right extends LinearOpMode {
 
                 double pos = lift.getCurrentPosition();
                 packet.put("liftPos", pos);
-                if (pos < 3400.0) {
+                if (pos < 3500.0) {
                     return true;
                 } else {
                     lift.setPower(0);
@@ -77,6 +79,7 @@ public class Right extends LinearOpMode {
                 }
             }
         }
+
         public Action liftFull() {
             return new LiftFull();
         }
@@ -101,6 +104,7 @@ public class Right extends LinearOpMode {
                 }
             }
         }
+
         public Action liftPlace() {
             return new LiftPlace();
         }
@@ -112,7 +116,6 @@ public class Right extends LinearOpMode {
             public boolean run(@NonNull TelemetryPacket packet) {
                 if (!initialized) {
                     lift.setPower(-0.8);
-                    clawArm.setPosition(0.4);
                     initialized = true;
                 }
 
@@ -122,17 +125,18 @@ public class Right extends LinearOpMode {
                     return true;
                 } else {
                     lift.setPower(0);
-                    clawArm.setPosition(0.15);
+                    sleep(500);
                     return false;
                 }
             }
         }
-        public Action liftDown(){
+
+        public Action liftDown() {
             return new LiftDown();
         }
     }
 
-    public class Park {
+    public static class Park {
         private final DcMotorEx slider;
 
         public Park(HardwareMap hardwareMap) {
@@ -163,6 +167,7 @@ public class Right extends LinearOpMode {
                 }
             }
         }
+
         public Action liftUp() {
             return new LiftUp();
         }
@@ -183,6 +188,7 @@ public class Right extends LinearOpMode {
                 return false;
             }
         }
+
         public Action closeClaw() {
             return new CloseClaw();
         }
@@ -195,6 +201,7 @@ public class Right extends LinearOpMode {
                 return false;
             }
         }
+
         public Action openClaw() {
             return new OpenClaw();
         }
@@ -211,11 +218,12 @@ public class Right extends LinearOpMode {
         public class ArmDown implements Action {
             @Override
             public boolean run(@NonNull TelemetryPacket packet) {
-                clawArm.setPosition(0.65);
+                clawArm.setPosition(0.16);
                 sleep(1000);
                 return false;
             }
         }
+
         public Action armDown() {
             return new ArmDown();
         }
@@ -223,11 +231,12 @@ public class Right extends LinearOpMode {
         public class ArmMiddle implements Action {
             @Override
             public boolean run(@NonNull TelemetryPacket packet) {
-                clawArm.setPosition(0.4);
+                clawArm.setPosition(0.12);
                 sleep(1000);
                 return false;
             }
         }
+
         public Action armMiddle() {
             return new ArmMiddle();
         }
@@ -235,11 +244,12 @@ public class Right extends LinearOpMode {
         public class ArmUp implements Action {
             @Override
             public boolean run(@NonNull TelemetryPacket packet) {
-                clawArm.setPosition(0.20);
+                clawArm.setPosition(0.09);
                 sleep(1000);
                 return false;
             }
         }
+
         public Action armUp() {
             return new ArmUp();
         }
@@ -260,6 +270,7 @@ public class Right extends LinearOpMode {
                 return false;
             }
         }
+
         public Action clawDown() {
             return new ClawDown();
         }
@@ -272,6 +283,7 @@ public class Right extends LinearOpMode {
                 return false;
             }
         }
+
         public Action clawUp() {
             return new ClawUp();
         }
@@ -292,6 +304,7 @@ public class Right extends LinearOpMode {
                 return false;
             }
         }
+
         public Action resetBucket() {
             return new ResetBucket();
         }
@@ -304,6 +317,7 @@ public class Right extends LinearOpMode {
                 return false;
             }
         }
+
         public Action emptyBucket() {
             return new EmptyBucket();
         }
@@ -322,24 +336,53 @@ public class Right extends LinearOpMode {
         ClawRotation clawRotation = new ClawRotation(hardwareMap);
 
         TrajectoryActionBuilder place = drive.actionBuilder(initialPose)
-                .splineToLinearHeading(new Pose2d(-4.66, 35.34, Math.toRadians(90.00)), Math.toRadians(270.00));
+                .splineToLinearHeading(new Pose2d(-4, 35.34, Math.toRadians(90.00)), Math.toRadians(270.00), new TranslationalVelConstraint(60));
 
         TrajectoryActionBuilder reverse = place.endTrajectory().fresh()
-                .strafeTo(new Vector2d(-4.66, 31));
+                .strafeTo(new Vector2d(-4.66, 31), new TranslationalVelConstraint(60));
 
         TrajectoryActionBuilder forward = reverse.endTrajectory().fresh()
-                .lineToY(50);
+                .lineToY(50, new TranslationalVelConstraint(60));
 
         TrajectoryActionBuilder pickUp = forward.endTrajectory().fresh()
-                .splineTo(new Vector2d(16.55, 49.66), Math.toRadians(-24.70))
-                .splineTo(new Vector2d(46.48, 43.5), Math.toRadians(270.00));
+                .splineTo(new Vector2d(-37, 40), Math.toRadians(-24.70), new TranslationalVelConstraint(30))
+                .splineTo(new Vector2d(-38.57, 26), Math.toRadians(270), new TranslationalVelConstraint(30))
+                .splineTo(new Vector2d(-50, 10), Math.toRadians(270.00), new TranslationalVelConstraint(30));
 
         TrajectoryActionBuilder bucket = pickUp.endTrajectory().fresh()
                 .turnTo(Math.toRadians(220))
-                .strafeTo(new Vector2d(57, 61.5));
+                .strafeTo(new Vector2d(57, 61.5), new TranslationalVelConstraint(60));
 
         TrajectoryActionBuilder park = bucket.endTrajectory().fresh()
                 .splineTo(new Vector2d(28.79, -9.64), Math.toRadians(180.00));
+
+        TrajectoryActionBuilder push1 = forward.endTrajectory().fresh()
+                .splineTo(new Vector2d(-20.00, 43.65), Math.toRadians(225.10), new TranslationalVelConstraint(60))
+                .splineTo(new Vector2d(-36.39, 20.65), Math.toRadians(256.22), new TranslationalVelConstraint(60))
+                .splineToConstantHeading(new Vector2d(-44, 15), Math.toRadians(280), new TranslationalVelConstraint(60))
+                .strafeTo(new Vector2d(-44, 22.27), new TranslationalVelConstraint(60))
+                .lineToY(50)
+                .waitSeconds(0.25)
+                .lineToY(64);
+
+        TrajectoryActionBuilder push2 = push1.endTrajectory().fresh()
+                .splineTo(new Vector2d(-50, -3.5), Math.toRadians(280))
+                .strafeTo(new Vector2d(-50, 22.27))
+                .lineToY(62.93);
+
+        TrajectoryActionBuilder place2 = push1.endTrajectory().fresh()
+                .lineToY(60)
+                .splineToLinearHeading(new Pose2d(-8, 39.34, Math.toRadians(90.00)), Math.toRadians(270.00));
+
+        TrajectoryActionBuilder pick1 = forward.endTrajectory().fresh()
+                .turn(Math.toRadians(180))
+                .splineToConstantHeading(new Vector2d(-50.94, 60), Math.toRadians(90))
+                .waitSeconds(0.25)
+                .lineToY(64);
+
+        TrajectoryActionBuilder place3 = pick1.endTrajectory().fresh()
+                .lineToY(60)
+                .splineToLinearHeading(new Pose2d(-12, 39.34, Math.toRadians(90.00)), Math.toRadians(270.00));
 
         waitForStart();
 
@@ -347,30 +390,44 @@ public class Right extends LinearOpMode {
 
         Actions.runBlocking(
                 new SequentialAction(
-                        place.build(),
-                        lift.liftUp(),
+                        new ParallelAction(
+                                place.build(),
+                                lift.liftUp()
+                        ),
                         reverse.build(),
                         lift.liftPlace(),
-                        forward.build(),
-                        lift.liftDown(),
-                        pickUp.build(),
-                        clawRotation.clawDown(),
-                        claw.openClaw(),
-                        clawArm.armDown(),
-                        claw.closeClaw(),
                         new ParallelAction(
-                                bucketServo.resetBucket(),
-                                claw.closeClaw(),
+                                forward.build(),
+                                lift.liftDown()
+                        ),
+                        push1.build(),
+                        new ParallelAction(
+                                lift.liftUp(),
                                 new SequentialAction(
-                                        clawArm.armUp(),
-                                        clawRotation.clawUp(),
-                                        claw.openClaw()
+                                        place2.build(),
+                                        lift.liftUp()
                                 )
                         ),
-                                bucket.build(),
-                                clawRotation.clawDown(),
-                        lift.liftFull(),
-                        bucketServo.emptyBucket()
+                        reverse.build(),
+                        lift.liftPlace(),
+                        new ParallelAction(
+                                forward.build(),
+                                lift.liftDown()
+                        ),
+                        pick1.build(),
+                        new ParallelAction(
+                                lift.liftUp(),
+                                new SequentialAction(
+                                        place3.build(),
+                                        lift.liftUp()
+                                )
+                        ),
+                        reverse.build(),
+                        lift.liftPlace(),
+                        new ParallelAction(
+                                forward.build(),
+                                lift.liftDown()
+                        )
 
                 )
         );
