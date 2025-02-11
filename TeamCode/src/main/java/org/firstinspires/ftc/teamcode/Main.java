@@ -32,7 +32,6 @@ package org.firstinspires.ftc.teamcode;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.hardware.DcMotor;
-import com.qualcomm.robotcore.hardware.DcMotorSimple;
 import com.qualcomm.robotcore.hardware.Servo;
 import com.qualcomm.robotcore.util.ElapsedTime;
 
@@ -64,7 +63,7 @@ import com.qualcomm.robotcore.util.ElapsedTime;
  * Remove or comment out the @Disabled line to add this OpMode to the Driver Station OpMode list
  */
 
-@TeleOp(name="Main")
+@TeleOp(name = "Main")
 public class Main extends LinearOpMode {
 
     // Declare OpMode members for each of the 4 motors.
@@ -80,12 +79,11 @@ public class Main extends LinearOpMode {
         DcMotor rightFront = hardwareMap.get(DcMotor.class, "frontRight");
         DcMotor rightRear = hardwareMap.get(DcMotor.class, "rearRight");
         DcMotor slide = hardwareMap.get(DcMotor.class, "slide");
+        DcMotor slide2 = hardwareMap.get(DcMotor.class, "slide2");
         Servo claw = hardwareMap.get(Servo.class, "claw");
         Servo clawRotation = hardwareMap.get(Servo.class, "clawRotation");
         Servo bucketServo = hardwareMap.get(Servo.class, "bucketServo");
         Servo clawArm = hardwareMap.get(Servo.class, "clawArm");
-        DcMotor climb1 = hardwareMap.get(DcMotor.class, "climb1");
-        DcMotor climb2 = hardwareMap.get(DcMotor.class, "climb2");
 
         leftFront.setDirection(DcMotor.Direction.REVERSE);
         leftRear.setDirection(DcMotor.Direction.REVERSE);
@@ -170,21 +168,13 @@ public class Main extends LinearOpMode {
                 }
                 if (gamepad1.right_stick_y > 0.5) {
                     slide.setPower(-1);
+                    slide2.setPower(-1);
                 } else if (gamepad1.right_stick_y < -0.5) {
                     slide.setPower(1);
+                    slide2.setPower(1);
                 } else {
                     slide.setPower(0.1);
-                }
-
-                if (gamepad1.right_trigger > 0.5) {
-                    climb2.setPower(1);
-                    climb1.setPower(-1);
-                } else if (gamepad1.left_trigger > 0.5) {
-                    climb1.setPower(1);
-                    climb2.setPower(-1);
-                } if (gamepad1.y) {
-                    climb1.setPower(0);
-                    climb2.setPower(0);
+                    slide2.setPower(0.1);
                 }
 
                 //Gamepad 2
@@ -193,20 +183,20 @@ public class Main extends LinearOpMode {
                     bucketServo.setPosition(0.69);
                 }
 
-                if (gamepad2.b){
+                if (gamepad2.b) {
                     bucketServo.setPosition(0.613);
-                } 
+                }
 
                 if (gamepad2.left_bumper) {
                     clawArm.setPosition(0.09);
                 }
 
                 if (gamepad2.right_bumper) {
-                    clawArm.setPosition(0.14);
+                    clawArm.setPosition(0.40);
                 }
 
                 if (gamepad2.right_trigger > 0.5) {
-                    clawArm.setPosition(0.16);
+                    clawArm.setPosition(0.50);
                 }
 
                 if (gamepad2.dpad_up) {
