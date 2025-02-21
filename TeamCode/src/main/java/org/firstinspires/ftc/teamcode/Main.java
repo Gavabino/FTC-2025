@@ -29,9 +29,19 @@
 
 package org.firstinspires.ftc.teamcode;
 
+import androidx.annotation.NonNull;
+
+import com.acmerobotics.dashboard.telemetry.TelemetryPacket;
+import com.acmerobotics.roadrunner.Action;
+import com.acmerobotics.roadrunner.ParallelAction;
+import com.acmerobotics.roadrunner.SequentialAction;
+import com.acmerobotics.roadrunner.ftc.Actions;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
+import com.qualcomm.robotcore.hardware.CRServo;
 import com.qualcomm.robotcore.hardware.DcMotor;
+import com.qualcomm.robotcore.hardware.DcMotorSimple;
+import com.qualcomm.robotcore.hardware.HardwareMap;
 import com.qualcomm.robotcore.hardware.Servo;
 import com.qualcomm.robotcore.util.ElapsedTime;
 
@@ -65,6 +75,129 @@ import com.qualcomm.robotcore.util.ElapsedTime;
 
 @TeleOp(name = "Main")
 public class Main extends LinearOpMode {
+    public class Presets {
+        private final DcMotor armSlider;
+        private final Servo clawRotationVertical;
+        private final Servo topClaw;
+        private final Servo clawOperation;
+        private final Servo armServo;
+
+        public Presets(HardwareMap hardwareMap) {
+            armSlider = hardwareMap.get(DcMotor.class, "armSlider");
+            armSlider.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
+            armSlider.setDirection(DcMotorSimple.Direction.FORWARD);
+            clawRotationVertical = hardwareMap.get(Servo.class, "clawRotationVertical");
+            topClaw = hardwareMap.get(Servo.class, "topClaw");
+            clawOperation = hardwareMap.get(Servo.class, "clawOperation");
+            armServo = hardwareMap.get(Servo.class, "armServo");
+        }
+
+        public class ResetSlider implements Action {
+
+            private boolean initialized = false;
+
+            @Override
+            public boolean run(@NonNull TelemetryPacket packet) {
+                //flip claw
+                //rotate claw
+                //bring in slider
+                if (!initialized) {
+                    armSlider.setPower(-1);
+                    initialized = true;
+                }
+
+                double pos = armSlider.getCurrentPosition();
+                packet.put("liftPos", pos);
+                if (pos > 0) {
+                    return true;
+                } else {
+                    armSlider.setPower(0);
+                    sleep(500);
+                    return false;
+                }
+            }
+        }
+
+        public Action resetSlider() {
+            return new ResetSlider();
+        }
+
+        public class ResetVerticalClaw implements Action {
+            @Override
+            public boolean run(@NonNull TelemetryPacket packet) {
+                clawRotationVertical.setPosition(0.9);
+                return false;
+            }
+        }
+
+        public Action resetVerticalClaw() {
+            return new ResetVerticalClaw();
+        }
+
+        public class OpenArmClaw implements Action {
+            @Override
+            public boolean run(@NonNull TelemetryPacket packet) {
+                clawOperation.setPosition(0.35);
+                return false;
+            }
+        }
+
+        public Action openArmClaw() {
+            return new OpenArmClaw();
+        }
+
+        public class CloseTopClaw implements Action {
+            @Override
+            public boolean run(@NonNull TelemetryPacket packet) {
+                topClaw.setPosition(0.35);
+                sleep(100);
+                return false;
+            }
+        }
+
+        public Action closeTopClaw() {
+            return new CloseTopClaw();
+        }
+
+        public class OpenTopClaw implements Action {
+            @Override
+            public boolean run(@NonNull TelemetryPacket packet) {
+                topClaw.setPosition(0.05);
+                sleep(100);
+                return false;
+            }
+        }
+
+        public Action openTopClaw() {
+            return new OpenTopClaw();
+        }
+
+        public class PlacingClawPosition implements Action {
+            @Override
+            public boolean run(@NonNull TelemetryPacket packet) {
+                armServo.setPosition(0.69);
+                return false;
+            }
+        }
+
+        public Action placingClawPosition() {
+            return new PlacingClawPosition();
+        }
+
+        public class GrabbingClawPosition implements Action {
+            @Override
+            public boolean run(@NonNull TelemetryPacket packet) {
+                armServo.setPosition(0.565);
+                return false;
+            }
+        }
+
+        public Action grabbingClawPosition() {
+            return new GrabbingClawPosition();
+        }
+
+
+    }
 
     // Declare OpMode members for each of the 4 motors.
     private final ElapsedTime runtime = new ElapsedTime();
@@ -80,10 +213,12 @@ public class Main extends LinearOpMode {
         DcMotor rightRear = hardwareMap.get(DcMotor.class, "rearRight");
         DcMotor slide = hardwareMap.get(DcMotor.class, "slide");
         DcMotor slide2 = hardwareMap.get(DcMotor.class, "slide2");
-        Servo claw = hardwareMap.get(Servo.class, "claw");
-        Servo clawRotation = hardwareMap.get(Servo.class, "clawRotation");
-        Servo bucketServo = hardwareMap.get(Servo.class, "bucketServo");
-        Servo clawArm = hardwareMap.get(Servo.class, "clawArm");
+        DcMotor armSlider = hardwareMap.get(DcMotor.class, "armSlider");
+        Servo clawOperation = hardwareMap.get(Servo.class, "clawOperation");
+        Servo armServo = hardwareMap.get(Servo.class, "armServo");
+        CRServo clawRotationHorizontal = hardwareMap.get(CRServo.class, "clawRotationHorizontal");
+        Servo topClaw = hardwareMap.get(Servo.class, "topClaw");
+        Servo clawRotationVertical = hardwareMap.get(Servo.class, "clawRotationVertical");
 
         leftFront.setDirection(DcMotor.Direction.REVERSE);
         leftRear.setDirection(DcMotor.Direction.REVERSE);
@@ -92,6 +227,9 @@ public class Main extends LinearOpMode {
 
         slide.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
         slide.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
+
+        armSlider.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
+        armSlider.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
 
         telemetry.addData("Status", "Initialized");
         telemetry.update();
@@ -104,8 +242,11 @@ public class Main extends LinearOpMode {
         rightRear.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
         leftRear.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
 
+        Presets presets = new Presets(hardwareMap);
+
         waitForStart();
         if (opModeIsActive()) {
+            double slideZeroPower = -0.1;
             while (opModeIsActive()) {
 
                 //Gamepad 1
@@ -173,53 +314,71 @@ public class Main extends LinearOpMode {
                     slide.setPower(1);
                     slide2.setPower(1);
                 } else {
-                    slide.setPower(0.1);
-                    slide2.setPower(0.1);
+                    slide.setPower(slideZeroPower);
+                    slide2.setPower(slideZeroPower);
+                }
+                if (gamepad1.a) {
+                    slideZeroPower = -0.75;
                 }
 
                 //Gamepad 2
 
-                if (gamepad2.a) {
-                    bucketServo.setPosition(0.69);
+                if (gamepad2.right_stick_button) {
+                    armServo.setPosition(0.69);
                 }
 
-                if (gamepad2.b) {
-                    bucketServo.setPosition(0.613);
+                if (gamepad2.left_stick_button) {
+                    armServo.setPosition(0.565);
                 }
 
-                if (gamepad2.left_bumper) {
-                    clawArm.setPosition(0.09);
+                if (gamepad2.left_trigger > 0.5) {
+                    topClaw.setPosition(0.35);
                 }
-
-                if (gamepad2.right_bumper) {
-                    clawArm.setPosition(0.40);
-                }
-
                 if (gamepad2.right_trigger > 0.5) {
-                    clawArm.setPosition(0.50);
+                    topClaw.setPosition(0.05);
+                }
+
+                if (gamepad2.right_stick_y > 0.5) {
+                    armSlider.setPower(-1);
+                } else if (gamepad2.right_stick_y < -0.5) {
+                    armSlider.setPower(1);
+                } else {
+                    armSlider.setPower(0);
                 }
 
                 if (gamepad2.dpad_up) {
-                    clawRotation.setPosition(0.61);
+                    clawRotationVertical.setPosition(0.90);
+                } else if (gamepad2.dpad_down) {
+                    clawRotationVertical.setPosition(0.10);
                 }
-
-                if (gamepad2.dpad_down) {
-                    clawRotation.setPosition(0.51);
-                }
-
                 if (gamepad2.dpad_left) {
-                    claw.setPosition(0.35);
+                    clawRotationHorizontal.setPower(0.30);
+                } else if (gamepad2.dpad_right) {
+                    clawRotationHorizontal.setPower(-0.30);
+                } else {
+                    clawRotationHorizontal.setPower(0);
                 }
-                if (gamepad2.dpad_right) {
-                    claw.setPosition(0.05);
-                }
-                telemetry.addData("Slide Position:", slide.getCurrentPosition());
-                telemetry.addData("Bucket Position:", bucketServo.getPosition());
-                telemetry.addData("Claw Arm Position:", clawArm.getPosition());
-                telemetry.addData("Claw Rotation Position", clawRotation.getPosition());
-                telemetry.addData("Claw", claw.getPosition());
 
-                telemetry.update();
+                if (gamepad2.left_bumper) {
+                    clawOperation.setPosition(0.35);
+                } else if (gamepad2.right_bumper) {
+                    clawOperation.setPosition(0.05);
+                }
+                if (gamepad2.x) {
+                    Actions.runBlocking(new ParallelAction(
+                            presets.resetSlider(),
+                            presets.resetVerticalClaw(),
+                            presets.grabbingClawPosition(),
+                            presets.openTopClaw()
+                    ));
+                }
+                if (gamepad2.a) {
+                    Actions.runBlocking(new SequentialAction(
+                            presets.closeTopClaw(),
+                            presets.openArmClaw(),
+                            presets.placingClawPosition()
+                    ));
+                }
             }
         }
     }

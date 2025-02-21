@@ -18,13 +18,13 @@ import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.DcMotorEx;
 import com.qualcomm.robotcore.hardware.DcMotorSimple;
 import com.qualcomm.robotcore.hardware.HardwareMap;
-import com.qualcomm.robotcore.hardware.Servo;
 
 @Config
 @Autonomous(name = "Right", group = "Autonomous", preselectTeleOp = "Main")
 public class Right extends LinearOpMode {
     public class Lift {
         private final DcMotorEx lift;
+        private final DcMotorEx lift2;
 
         public Lift(HardwareMap hardwareMap) {
             lift = hardwareMap.get(DcMotorEx.class, "slide");
@@ -32,6 +32,11 @@ public class Right extends LinearOpMode {
             lift.setDirection(DcMotorSimple.Direction.FORWARD);
             lift.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
             lift.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
+            lift2 = hardwareMap.get(DcMotorEx.class, "slide2");
+            lift2.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
+            lift2.setDirection(DcMotorSimple.Direction.FORWARD);
+            lift2.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
+            lift2.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
         }
 
         public class LiftUp implements Action {
@@ -41,6 +46,7 @@ public class Right extends LinearOpMode {
             public boolean run(@NonNull TelemetryPacket packet) {
                 if (!initialized) {
                     lift.setPower(0.75);
+                    lift2.setPower(0.75);
                     initialized = true;
                 }
 
@@ -50,6 +56,7 @@ public class Right extends LinearOpMode {
                     return true;
                 } else {
                     lift.setPower(0);
+                    lift2.setPower(0);
                     return false;
                 }
             }
@@ -66,6 +73,7 @@ public class Right extends LinearOpMode {
             public boolean run(@NonNull TelemetryPacket packet) {
                 if (!initialized) {
                     lift.setPower(0.75);
+                    lift2.setPower(0.75);
                     initialized = true;
                 }
 
@@ -75,6 +83,7 @@ public class Right extends LinearOpMode {
                     return true;
                 } else {
                     lift.setPower(0);
+                    lift2.setPower(0);
                     return false;
                 }
             }
@@ -91,15 +100,17 @@ public class Right extends LinearOpMode {
             public boolean run(@NonNull TelemetryPacket packet) {
                 if (!initialized) {
                     lift.setPower(-0.75);
+                    lift2.setPower(-0.75);
                     initialized = true;
                 }
 
                 double pos = lift.getCurrentPosition();
                 packet.put("liftPos", pos);
-                if (pos > 1400.0) {
+                if (pos > 1600.0) {
                     return true;
                 } else {
                     lift.setPower(0);
+                    lift2.setPower(0);
                     return false;
                 }
             }
@@ -116,15 +127,17 @@ public class Right extends LinearOpMode {
             public boolean run(@NonNull TelemetryPacket packet) {
                 if (!initialized) {
                     lift.setPower(-0.8);
+                    lift2.setPower(-0.8);
                     initialized = true;
                 }
 
                 double pos = lift.getCurrentPosition();
                 packet.put("liftPos", pos);
-                if (pos > 100.0) {
+                if (pos > 25.0) {
                     return true;
                 } else {
                     lift.setPower(0);
+                    lift2.setPower(0);
                     sleep(500);
                     return false;
                 }
@@ -136,204 +149,12 @@ public class Right extends LinearOpMode {
         }
     }
 
-    public static class Park {
-        private final DcMotorEx slider;
-
-        public Park(HardwareMap hardwareMap) {
-            slider = hardwareMap.get(DcMotorEx.class, "climb1");
-            slider.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
-            slider.setDirection(DcMotorSimple.Direction.FORWARD);
-            slider.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
-            slider.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
-        }
-
-        public class LiftUp implements Action {
-            private boolean initialized = false;
-
-            @Override
-            public boolean run(@NonNull TelemetryPacket packet) {
-                if (!initialized) {
-                    slider.setPower(-0.75);
-                    initialized = true;
-                }
-
-                double pos = slider.getCurrentPosition();
-                packet.put("liftPos", pos);
-                if (pos > -3000) {
-                    return true;
-                } else {
-                    slider.setPower(0);
-                    return false;
-                }
-            }
-        }
-
-        public Action liftUp() {
-            return new LiftUp();
-        }
-    }
-
-    public class Claw {
-        private final Servo claw;
-
-        public Claw(HardwareMap hardwareMap) {
-            claw = hardwareMap.get(Servo.class, "claw");
-        }
-
-        public class CloseClaw implements Action {
-            @Override
-            public boolean run(@NonNull TelemetryPacket packet) {
-                claw.setPosition(0.35);
-                sleep(1000);
-                return false;
-            }
-        }
-
-        public Action closeClaw() {
-            return new CloseClaw();
-        }
-
-        public class OpenClaw implements Action {
-            @Override
-            public boolean run(@NonNull TelemetryPacket packet) {
-                claw.setPosition(0.05);
-                sleep(1000);
-                return false;
-            }
-        }
-
-        public Action openClaw() {
-            return new OpenClaw();
-        }
-    }
-
-    public class ClawArm {
-        private final Servo clawArm;
-        private final ClawRotation clawRotation = new ClawRotation(hardwareMap);
-
-        public ClawArm(HardwareMap hardwareMap) {
-            clawArm = hardwareMap.get(Servo.class, "clawArm");
-        }
-
-        public class ArmDown implements Action {
-            @Override
-            public boolean run(@NonNull TelemetryPacket packet) {
-                clawArm.setPosition(0.16);
-                sleep(1000);
-                return false;
-            }
-        }
-
-        public Action armDown() {
-            return new ArmDown();
-        }
-
-        public class ArmMiddle implements Action {
-            @Override
-            public boolean run(@NonNull TelemetryPacket packet) {
-                clawArm.setPosition(0.12);
-                sleep(1000);
-                return false;
-            }
-        }
-
-        public Action armMiddle() {
-            return new ArmMiddle();
-        }
-
-        public class ArmUp implements Action {
-            @Override
-            public boolean run(@NonNull TelemetryPacket packet) {
-                clawArm.setPosition(0.09);
-                sleep(1000);
-                return false;
-            }
-        }
-
-        public Action armUp() {
-            return new ArmUp();
-        }
-    }
-
-    public class ClawRotation {
-        private final Servo clawRotation;
-
-        public ClawRotation(HardwareMap hardwareMap) {
-            clawRotation = hardwareMap.get(Servo.class, "clawRotation");
-        }
-
-        public class ClawDown implements Action {
-            @Override
-            public boolean run(@NonNull TelemetryPacket packet) {
-                clawRotation.setPosition(0.51);
-                sleep(1000);
-                return false;
-            }
-        }
-
-        public Action clawDown() {
-            return new ClawDown();
-        }
-
-        public class ClawUp implements Action {
-            @Override
-            public boolean run(@NonNull TelemetryPacket packet) {
-                clawRotation.setPosition(0.61);
-                sleep(1000);
-                return false;
-            }
-        }
-
-        public Action clawUp() {
-            return new ClawUp();
-        }
-    }
-
-    public class Bucket {
-        private final Servo bucket;
-
-        public Bucket(HardwareMap hardwareMap) {
-            bucket = hardwareMap.get(Servo.class, "bucketServo");
-        }
-
-        public class ResetBucket implements Action {
-            @Override
-            public boolean run(@NonNull TelemetryPacket packet) {
-                bucket.setPosition(0.613);
-                sleep(1000);
-                return false;
-            }
-        }
-
-        public Action resetBucket() {
-            return new ResetBucket();
-        }
-
-        public class EmptyBucket implements Action {
-            @Override
-            public boolean run(@NonNull TelemetryPacket packet) {
-                bucket.setPosition(0.69);
-                sleep(1000);
-                return false;
-            }
-        }
-
-        public Action emptyBucket() {
-            return new EmptyBucket();
-        }
-    }
-
 
     @Override
     public void runOpMode() {
         Pose2d initialPose = new Pose2d(-12.07, 63, Math.toRadians(270));
         MecanumDrive drive = new MecanumDrive(hardwareMap, initialPose);
         Lift lift = new Lift(hardwareMap);
-        Park slider = new Park(hardwareMap);
-        Claw claw = new Claw(hardwareMap);
-        ClawArm clawArm = new ClawArm(hardwareMap);
-        Bucket bucketServo = new Bucket(hardwareMap);
-        ClawRotation clawRotation = new ClawRotation(hardwareMap);
 
         TrajectoryActionBuilder place = drive.actionBuilder(initialPose)
                 .splineToLinearHeading(new Pose2d(-4, 35.34, Math.toRadians(90.00)), Math.toRadians(270.00), new TranslationalVelConstraint(60));
@@ -358,9 +179,9 @@ public class Right extends LinearOpMode {
 
         TrajectoryActionBuilder push1 = forward.endTrajectory().fresh()
                 .splineTo(new Vector2d(-20.00, 43.65), Math.toRadians(225.10), new TranslationalVelConstraint(60))
-                .splineTo(new Vector2d(-36.39, 20.65), Math.toRadians(256.22), new TranslationalVelConstraint(60))
+                .splineTo(new Vector2d(-27.39, 20.65), Math.toRadians(256.22), new TranslationalVelConstraint(60))
                 .splineToConstantHeading(new Vector2d(-44, 15), Math.toRadians(280), new TranslationalVelConstraint(60))
-                .strafeTo(new Vector2d(-44, 22.27), new TranslationalVelConstraint(60))
+                .strafeTo(new Vector2d(-46, 22.27), new TranslationalVelConstraint(60))
                 .lineToY(50)
                 .waitSeconds(0.25)
                 .lineToY(64);
